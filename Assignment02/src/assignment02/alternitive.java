@@ -26,7 +26,8 @@ public class alternitive {
      */
     public static void main(String[] args) {
         //build things
-        City town = new City();
+            //City
+                City town = new City();
             //walls
                 //loop
                     int mazeSize=7;
@@ -60,6 +61,23 @@ public class alternitive {
                     new Wall(town,4,2,Direction.SOUTH);
                     new Wall(town,4,2,Direction.WEST);
                     new Wall(town,3,2,Direction.WEST);
+                    new Wall(town,4,7,Direction.SOUTH);
+                    new Wall(town,4,2,Direction.WEST);
+                    new Wall(town,4,6,Direction.SOUTH);
+                    new Wall(town,4,6,Direction.NORTH);
+                    new Wall(town,4,6,Direction.EAST);
+                    new Wall(town,5,1,Direction.SOUTH);
+                    new Wall(town,5,2,Direction.SOUTH);
+                    new Wall(town,5,3,Direction.EAST);
+                    new Wall(town,6,3,Direction.EAST);
+                    new Wall(town,6,3,Direction.SOUTH);
+                    new Wall(town,6,2,Direction.SOUTH);
+                    new Wall(town,7,4,Direction.EAST);
+                    new Wall(town,6,4,Direction.EAST);
+                    new Wall(town,5,6,Direction.SOUTH);
+                    new Wall(town,5,7,Direction.SOUTH);
+                    new Wall(town,6,6,Direction.WEST);
+                    new Wall(town,6,7,Direction.SOUTH);
             //thing
                 new Thing(town,mazeSize,mazeSize);
             //robot
