@@ -50,47 +50,55 @@ public class alternitive {
                     new Wall(town,3,4,Direction.EAST);
                     new Wall(town,4,4,Direction.EAST);
                     new Wall(town,4,4,Direction.SOUTH);
-                    new Wall(town,2,4,Direction.SOUTH);
-                    new Wall(town,4,3,Direction.EAST);
+                    new Wall(town,2,5,Direction.SOUTH);
+                    new Wall(town,1,4,Direction.SOUTH);
+                    new Wall(town,1,6,Direction.WEST);
+                    new Wall(town,1,6,Direction.SOUTH);
+                    new Wall(town,2,6,Direction.SOUTH);
+                    new Wall(town,2,7,Direction.SOUTH);
+                    new Wall(town,4,3,Direction.SOUTH);
+                    new Wall(town,4,2,Direction.SOUTH);
+                    new Wall(town,4,2,Direction.WEST);
+                    new Wall(town,3,2,Direction.WEST);
             //thing
                 new Thing(town,mazeSize,mazeSize);
             //robot
                 Robot jarvis = new Robot(town,1,1,Direction.SOUTH);
-                //AI
-                while(!jarvis.canPickThing())
+        //AI
+        while(!jarvis.canPickThing())
+        {
+            jarvis.turnLeft();
+            if(jarvis.frontIsClear())
+            {
+                jarvis.move();
+            }
+            else if(!jarvis.frontIsClear())
+            {
+                jarvis.turnLeft();
+                jarvis.turnLeft();
+                jarvis.turnLeft();
+                if(jarvis.frontIsClear())
                 {
+                    jarvis.move();
+                }
+                else if(!jarvis.frontIsClear())
+                {
+                    jarvis.turnLeft();
+                    jarvis.turnLeft();
                     jarvis.turnLeft();
                     if(jarvis.frontIsClear())
                     {
-                        jarvis.move();
+                         jarvis.move();
                     }
                     else if(!jarvis.frontIsClear())
                     {
                         jarvis.turnLeft();
                         jarvis.turnLeft();
-                        jarvis.turnLeft();
-                        if(jarvis.frontIsClear())
-                        {
-                            jarvis.move();
-                        }
-                        else if(!jarvis.frontIsClear())
-                        {
-                            jarvis.turnLeft();
-                            jarvis.turnLeft();
-                            jarvis.turnLeft();
-                            if(jarvis.frontIsClear())
-                            {
-                                jarvis.move();
-                            }
-                            else if(!jarvis.frontIsClear())
-                            {
-                                jarvis.turnLeft();
-                                jarvis.turnLeft();
-                            }
-                        }
                     }
                 }
-                jarvis.pickThing();
+            }
+        }
+        jarvis.pickThing();
     }
     
 }
